@@ -1,10 +1,10 @@
 --1.A
 f :: Integer -> Integer
 
-f 1 = 8
-f 4 = 131
-f 16 = 16
-
+f n | n == 1 = 8
+    | n == 4 = 131
+    | n == 16 = 16
+    
 --1.B
 g :: Integer -> Integer
 
