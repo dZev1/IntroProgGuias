@@ -1,1 +1,1 @@
-todoMenor :: 
+todoMenor :: (Float, Float) -> (Float, Float) -> Bool
