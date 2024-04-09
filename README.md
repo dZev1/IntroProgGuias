@@ -1,2 +1,2 @@
 # Practica3
-Practica 3 en clase
+Resolución de los ejercicios de la Practica 3 de Introducción a la Programación. Guía Haskell
