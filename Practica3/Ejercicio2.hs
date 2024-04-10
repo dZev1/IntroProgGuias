@@ -52,8 +52,7 @@ sumaDistintos x y z | x /= y && x /= z && y /= z = x + y + z
 -- esMultiploDe: dados dos numeros naturales, decidir si el primero es multiplo del segundo
 esMultiploDe :: Integer -> Integer -> Bool
 esMultiploDe n m | mod n m == 0 = True
-                 | mod m n /= 0 = False
-                 | otherwise = False
+                 | mod n m /= 0 = False
 
 -- digitoUnidades: dado un numero entero, extrae su dıgito de las unidades.
 digitoUnidades :: Integer -> Integer
