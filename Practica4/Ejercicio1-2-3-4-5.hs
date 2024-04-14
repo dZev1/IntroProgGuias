@@ -34,7 +34,7 @@ sumaImpares n = (2 * n - 1) + sumaImpares (n - 1)
 -- Implementar la funcion medioFact :: Integer -> Integer que dado n ∈ N calcula n!! = n (n−2)(n−4)· · ·
 -- problema medioFac (n: Z) : Z {
 --  requiere: { n ≥ 0 }
---  asegura: { resultado = prod_{i=0}^{floor{frac{n-1}{2}} \left(n-2i \right) }
+--  asegura: { resultado = \prod_{i=0}^{floor{frac{n-1}{2}} \left(n-2i \right) }
 -- }
 
 medioFact :: Integer -> Integer
