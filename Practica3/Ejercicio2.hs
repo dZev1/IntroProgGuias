@@ -3,7 +3,7 @@
 -- absoluto: calcula el valor absoluto de un n´umero entero
 absoluto :: Integer -> Integer
 absoluto n | n >= 0 = n
-    | n < 0 = -n
+           | n < 0 = -n
 
 -- maximoabsoluto: devuelve el maximo entre el valor absoluto de dos numeros enteros
 maximoAbsoluto :: Integer -> Integer -> Integer
@@ -19,17 +19,19 @@ maximo3 x y z | x >= y && x >= z = x
 -- algunoEs0: dados dos numeros racionales, decide si alguno de los dos es igual a 0
 algunoEs0 :: Float -> Float -> Bool
 -- Pattern Matching
--- algunoEs0 x 0 = True
--- algunoEs0 0 x = True
+algunoEs0 x 0 = True
+algunoEs0 0 x = True
+algunoEs0 x y = False
 
-algunoEs0 x y = x == 0 || y == 0
+-- algunoEs0 x y = x == 0 || y == 0
 
 -- ambosSon0: dados dos numeros racionales, decide si ambos son iguales a 0
 ambosSon0 :: Float -> Float -> Bool
 -- Pattern Matching
--- ambosSon0 0 0 = True
+ambosSon0 0 0 = True
+ambosSon0 x y = False
 
-ambosSon0 x y = x == 0 && y == 0
+-- ambosSon0 x y = x == 0 && y == 0
 
 -- mismoIntervalo: dados dos numeros reales, indica si estan relacionados considerando la relacion de equivalencia en R
 -- cuyas clases de equivalencia son: (−∞, 3],(3, 7] y (7, ∞), o dicho de otra forma, si pertenecen al mismo intervalo.
@@ -50,14 +52,13 @@ sumaDistintos x y z | x /= y && x /= z && y /= z = x + y + z
 -- esMultiploDe: dados dos numeros naturales, decidir si el primero es multiplo del segundo
 esMultiploDe :: Integer -> Integer -> Bool
 esMultiploDe n m | mod n m == 0 = True
-                 | mod m n /= 0 = False
-                 | otherwise = False
+                 | mod n m /= 0 = False
 
 -- digitoUnidades: dado un numero entero, extrae su dıgito de las unidades.
 digitoUnidades :: Integer -> Integer
 digitoUnidades n = mod (abs n) 10
 
--- digitoDecenas: dado un n´umero entero, extrae su d´ıgito de las decenas.
+-- digitoDecenas: dado un numero entero, extrae su dıgito de las decenas.
 digitoDecenas :: Integer -> Integer
 digitoDecenas n = digitoUnidades (div (abs n) 10)
 -- otra forma: digitoDecenas n = div (mod (abs n) 100 - mod (abs n) 10) 10
