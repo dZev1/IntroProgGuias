@@ -30,3 +30,14 @@ esDivisible n m | n == 0 = True
 sumaImpares :: Integer -> Integer
 sumaImpares 1 = 1
 sumaImpares n = (2 * n - 1) + sumaImpares (n - 1)
+
+-- Implementar la funcion medioFact :: Integer -> Integer que dado n ∈ N calcula n!! = n (n−2)(n−4)· · ·
+-- problema medioFac (n: Z) : Z {
+--  requiere: { n ≥ 0 }
+--  asegura: { resultado = prod_{i=0}^{floor{frac{n-1}{2}} \left(n-2i \right) }
+-- }
+
+medioFact :: Integer -> Integer
+medioFact 0 = 1
+medioFact 1 = 1
+medioFact n = n * medioFact(n - 2)
