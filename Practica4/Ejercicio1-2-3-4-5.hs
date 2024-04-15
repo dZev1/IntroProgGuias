@@ -16,7 +16,7 @@ parteEntera :: Float -> Integer
 parteEntera n | n < (-1) && n < 0  = -1 --NO ES NECESARIA ESTA LINEA -> parteEntera -0.34 = parteEntera 0.35 - 1 = -1 
               | 0 <= n && n < 1 = 0
               | n >= 1 = 1 + parteEntera (n - 1)
-              | otherwise = (-1) + parteEntera (n + 1)
+              | otherwise = -1 + parteEntera (n + 1)
 
 -- Especificar e implementar la funcion esDivisible :: Integer -> Integer -> Bool que dados dos numeros naturales
 -- determina si el primero es divisible por el segundo. No esta permitido utilizar las funciones mod ni div.
