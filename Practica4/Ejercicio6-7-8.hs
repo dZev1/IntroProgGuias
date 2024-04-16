@@ -1,3 +1,9 @@
+-- Especificar e implementar la funcion sumaDigitos :: Integer -> Integer que calcula la suma de digitos de
+-- un numero natural. Para esta funcion pueden utilizar div y mod.
+sumaDigitos :: Integer -> Integer
+sumaDigitos 0 = 0
+sumaDigitos n = mod n 10 + sumaDigitos (div n 10)
+
 -- Implementar la funcion todosDigitosIguales :: Integer -> Bool que determina si todos los dıgitos de un numero natural son iguales, es decir:
 --  problema todosDigitosIguales (n: Z) : Bool {
 --      requiere: { n > 0 }
@@ -5,15 +11,14 @@
 --  }
 
 todosDigitosIguales :: Integer -> Bool
-
 todosDigitosIguales n | n < 10 = True
-                      | otherwise = ultimoDigito n == ultimoDigito (menosUltimo n) && todosDigitosIguales (menosUltimo n)
+                      | otherwise = ultimoDigito n == ultimoDigito (sacaUltimoDigito n) && todosDigitosIguales (sacaUltimoDigito n)
 
 ultimoDigito :: Integer -> Integer
 ultimoDigito n = mod n 10
 
-menosUltimo :: Integer -> Integer
-menosUltimo n = div n 10
+sacaUltimoDigito :: Integer -> Integer
+sacaUltimoDigito n = div n 10
 
 -- Implementar la funcion iesimoDigito :: Integer -> Integer -> Integer que dado un n ∈ N≥0 y un i ∈ N menor o igual a la cantidad de digitos de n, devuelve el i-esimo digito de n.
 -- problema iesimoDigito (n: Z, i: N) : Z {
@@ -28,8 +33,8 @@ menosUltimo n = div n 10
 
 cantDigitos :: Integer -> Integer
 cantDigitos n | n < 10 = 1
-              | otherwise = 1 + cantDigitos(menosUltimo 10)
+              | otherwise = 1 + cantDigitos(sacaUltimoDigito n)
 
 iesimoDigito :: Integer -> Integer -> Integer
 iesimoDigito n i | cantDigitos n == i = ultimoDigito n
-                 | otherwise = iesimoDigito (menosUltimo n) i
+                 | otherwise = iesimoDigito (sacaUltimoDigito n) i

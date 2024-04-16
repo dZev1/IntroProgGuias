@@ -36,7 +36,6 @@ sumaImpares n = (2 * n - 1) + sumaImpares (n - 1)
 --  requiere: { n ≥ 0 }
 --  asegura: { resultado = \prod_{i=0}^{floor{frac{n-1}{2}} \left(n-2i \right) }
 -- }
-
 medioFact :: Integer -> Integer
 medioFact 0 = 1
 medioFact 1 = 1
