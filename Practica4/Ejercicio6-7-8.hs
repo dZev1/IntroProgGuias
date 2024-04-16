@@ -38,3 +38,8 @@ cantDigitos n | n < 10 = 1
 iesimoDigito :: Integer -> Integer -> Integer
 iesimoDigito n i | cantDigitos n == i = ultimoDigito n
                  | otherwise = iesimoDigito (sacaUltimoDigito n) i
+
+-- Especificar e implementar una funcion esCapicua :: Integer -> Bool que dado n ∈ N≥0 determina si n es un numero capicua.
+esCapicua :: Integer -> Bool
+esCapicua n | mod n 10 == iesimoDigito n 1 = True
+            | otherwise = False
