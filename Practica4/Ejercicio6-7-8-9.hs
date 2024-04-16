@@ -1,3 +1,4 @@
+import GHC.ResponseFile (escapeArgs)
 -- Especificar e implementar la funcion sumaDigitos :: Integer -> Integer que calcula la suma de digitos de
 -- un numero natural. Para esta funcion pueden utilizar div y mod.
 sumaDigitos :: Integer -> Integer
@@ -41,5 +42,5 @@ iesimoDigito n i | cantDigitos n == i = ultimoDigito n
 
 -- Especificar e implementar una funcion esCapicua :: Integer -> Bool que dado n ∈ N≥0 determina si n es un numero capicua.
 esCapicua :: Integer -> Bool
-esCapicua n | mod n 10 == iesimoDigito n 1 = True
-            | otherwise = False
+esCapicua n | n < 10 = True
+
