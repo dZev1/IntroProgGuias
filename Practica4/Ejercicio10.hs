@@ -14,6 +14,10 @@ f2 n q = q^n + f2 (n - 1) q
 
 -- C
 f3 :: Integer -> Integer -> Integer
-f3 n 1 = n
-f3 1 q = q^2
-f3 n q = q^(2 * n) + f3 (n - 1) q
+f3 n 1 = 2 * n
+f3 1 q = f2 2 q
+f3 n q = f2 (2 * n) q
+
+-- D
+f4 :: Integer -> Integer -> Integer
+f4 n q = f3 n q - f2 (n - 1) q
