@@ -20,4 +20,4 @@ f3 n q = f2 (2 * n) q
 
 -- D
 f4 :: Integer -> Integer -> Integer
-f4 n q = f3 n q - f2 (n - 1) 
+f4 n q = f3 n q - f2 (n - 1) q
