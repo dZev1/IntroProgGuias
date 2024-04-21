@@ -1,5 +1,8 @@
 -- Especificar e implementar una funcion sumaRacionales :: Integer -> Integer -> Float que dados dos
 -- naturales n, m sume todos los numeros racionales de la forma p/q con 1 ≤ p ≤ n y 1 ≤ q ≤ m, es decir:
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+import GHC.TypeLits (sameChar)
+{-# HLINT ignore "Use even" #-}
 
 sumaRacionales :: Integer -> Integer -> Float
 sumaRacionales 0 _ = 0
@@ -29,3 +32,27 @@ esFibonacciDesde n 1 = True
 esFibonacciDesde n m | fibonacci n == m = True
                      | fibonacci n > m = False
                      | otherwise = esFibonacciDesde (n + 1) m
+
+-- Implementar una funcion mayorDigitoPar :: Integer -> Integer segun la siguiente especificacion:
+-- problema mayorDigitoPar (n: N) : N {
+-- requiere: { True }
+-- asegura: { resultado es el mayor de los digitos pares de n. Si n no tiene ningun digito par, entonces resultado es -1. }
+-- }
+mayorDigitoPar :: Integer -> Integer
+mayorDigitoPar n | n < 10 && esPar n = n
+                 | n < 10 && not (esPar n) = -1
+                 | esPar (ultimoDigito n) = esMaximo (ultimoDigito n) (mayorDigitoPar (sacarUltimoDigito n))
+                 | otherwise = mayorDigitoPar (sacarUltimoDigito n)
+
+esPar :: Integer -> Bool
+esPar n = mod n 2 == 0
+
+esMaximo :: Integer -> Integer -> Integer
+esMaximo n m | n >= m = n
+             | otherwise = m
+
+sacarUltimoDigito :: Integer -> Integer
+sacarUltimoDigito n = div n 10
+
+ultimoDigito :: Integer -> Integer
+ultimoDigito n = mod n 10
