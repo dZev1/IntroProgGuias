@@ -38,6 +38,7 @@ esFibonacciDesde n m | fibonacci n == m = True
 -- requiere: { True }
 -- asegura: { resultado es el mayor de los digitos pares de n. Si n no tiene ningun digito par, entonces resultado es -1. }
 -- }
+
 mayorDigitoPar :: Integer -> Integer
 mayorDigitoPar n | n < 10 && esPar n = n
                  | n < 10 && not (esPar n) = -1
