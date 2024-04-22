@@ -36,3 +36,10 @@ hayRepetidos :: (Eq t) => [t] -> Bool
 hayRepetidos [] = False
 hayRepetidos (t:ts) | pertenece t ts = True
                     | otherwise = hayRepetidos ts
+
+-- quitar :: (Eq t) => t -> [t] -> [t], que dados un entero x y
+-- una lista xs, elimina la primera aparicion de x en la lista xs (de haberla)
+quitar :: (Eq t) => t -> [t] -> [t]
+quitar x [] = []
+quitar x (t:ts) | x == t = ts
+                | otherwise = t:quitar x ts
