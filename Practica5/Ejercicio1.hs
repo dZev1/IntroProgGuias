@@ -16,7 +16,7 @@ ultimo (t:ts) | longitud ts == 0 = t
 
 -- principio :: [t] -> [t] segun la siguiente especificacion:
 -- problema principio (s: seq⟨T⟩) : seq⟨T⟩ {
---  requiere: { |s| > 0 }
+--  requiere: { |s| > 0 }Ñ
 --  asegura: { resultado = subseq(s, 0, |s| − 1) }
 -- }
 

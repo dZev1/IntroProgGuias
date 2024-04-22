@@ -8,10 +8,14 @@
 pertenece :: (Eq t) => t -> [t] -> Bool
 pertenece _ [] = False
 pertenece t (x:xs) | t == x = True
-                   | otherwise = pertenece t xs
+                  | otherwise = pertenece t xs
+
+-- OTRA FORMA
+-- pertenece (t:ts) = x == y || pertenece e ts
 
 -- todosIguales :: (Eq t) => [t] -> Bool, que dada una lista devuelve verdadero si y solamente si
 -- todos sus elementos son iguales.
+
 todosIguales :: (Eq t) => [t] -> Bool
 todosIguales [] = True
 todosIguales [t] = True
@@ -40,6 +44,18 @@ hayRepetidos (t:ts) | pertenece t ts = True
 -- quitar :: (Eq t) => t -> [t] -> [t], que dados un entero x y
 -- una lista xs, elimina la primera aparicion de x en la lista xs (de haberla)
 quitar :: (Eq t) => t -> [t] -> [t]
-quitar x [] = []
+quitar _ [] = []
 quitar x (t:ts) | x == t = ts
-                | otherwise = t:quitar x ts
+                | otherwise = t : quitar x ts
+
+quitarTodos :: (Eq t) => t -> [t] -> [t]
+quitarTodos _ [] = []
+quitarTodos x (t:ts) | x == t && not (pertenece x ts) = ts
+                     | x == t && pertenece x ts = quitarTodos x ts 
+                     | otherwise = t : quitarTodos x ts
+
+eliminarRepetidos :: (Eq t) => [t] -> [t]
+eliminarRepetidos [] = []
+eliminarRepetidos [t] = [t]
+eliminarRepetidos (t:ts) | pertenece t ts = t : quitarTodos t ts
+                         | otherwise = t : eliminarRepetidos ts
