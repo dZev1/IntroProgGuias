@@ -48,14 +48,17 @@ quitar _ [] = []
 quitar x (t:ts) | x == t = ts
                 | otherwise = t : quitar x ts
 
+-- quitarTodos :: (Eq t ) => t -> [t] -> [t], que dados un entero x y una lista xs, elimina todas las apariciones
+-- de x en la lista xs (de haberlas)
 quitarTodos :: (Eq t) => t -> [t] -> [t]
 quitarTodos _ [] = []
 quitarTodos x (t:ts) | x == t && not (pertenece x ts) = ts
                      | x == t && pertenece x ts = quitarTodos x ts 
                      | otherwise = t : quitarTodos x ts
 
+-- eliminarRepetidos :: (Eq t) => [t] -> [t] que deja en la lista una unica aparicion de cada elemento, eliminando
+-- las repeticiones adicionales.
 eliminarRepetidos :: (Eq t) => [t] -> [t]
 eliminarRepetidos [] = []
-eliminarRepetidos [t] = [t]
-eliminarRepetidos (t:ts) | pertenece t ts = t : quitarTodos t ts
+eliminarRepetidos (t:ts) | pertenece t ts = t : quitarTodos t (eliminarRepetidos ts)
                          | otherwise = t : eliminarRepetidos ts
