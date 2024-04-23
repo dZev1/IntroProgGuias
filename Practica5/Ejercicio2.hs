@@ -1,3 +1,4 @@
+
 -- Definir las siguientes funciones sobre listas:
 
 -- pertenece :: (Eq t) => t -> [t] -> Bool según la siguiente especificacion:
@@ -62,3 +63,28 @@ eliminarRepetidos :: (Eq t) => [t] -> [t]
 eliminarRepetidos [] = []
 eliminarRepetidos (t:ts) | pertenece t ts = t : quitarTodos t (eliminarRepetidos ts)
                          | otherwise = t : eliminarRepetidos ts
+
+-- mismosElementos :: (Eq t) => [t] -> [t] -> Bool, que dadas dos listas devuelve verdadero si y solamente si
+-- ambas listas contienen los mismos elementos, sin tener en cuenta repeticiones.
+estaContenida :: (Eq t) => [t] -> [t] -> Bool
+estaContenida [] ys = True
+estaContenida (x:xs) ys = pertenece x ys && estaContenida xs ys
+
+mismosElementos :: (Eq t) => [t] -> [t] -> Bool
+mismosElementos [] _ = False
+mismosElementos _ [] = False
+mismosElementos xs ys = estaContenida xs ys && estaContenida ys xs
+
+-- capicua :: (Eq t) => [t] -> Bool segun la siguiente especificacion:
+-- problema capicua (s: seq⟨T⟩) : B {
+-- requiere: { True }
+-- asegura: { (resultado = true) ↔ (s = reverso(s)) }
+-- }
+capicua :: (Eq t) => [t] -> Bool
+capicua [] = True
+capicua ts = ts == reverso ts
+
+reverso :: [t] -> [t]
+reverso [] = []
+reverso [t] = [t]
+reverso (x:xs) = reverso xs ++ [x]
