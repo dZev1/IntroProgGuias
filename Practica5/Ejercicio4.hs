@@ -48,4 +48,3 @@ sacarPrimeraPalabra (x:xs) | x==' ' = xs
                            | otherwise = sacarPrimeraPalabra xs
 
 -- d
-
