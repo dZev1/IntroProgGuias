@@ -1,3 +1,5 @@
+module Ejercicio4 where
+
 type Texto = [Char]
 
 -- a
@@ -48,3 +50,5 @@ sacarPrimeraPalabra (x:xs) | x==' ' = xs
                            | otherwise = sacarPrimeraPalabra xs
 
 -- d
+palabraMasLarga :: [Char] -> [Char]
+pa
