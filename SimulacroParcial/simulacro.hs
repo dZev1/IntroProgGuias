@@ -1,4 +1,5 @@
 module Simulacro where
+import System.Win32 (eNABLE_QUICK_EDIT_MODE)
 
 -- RELACIONES VALIDAS
 relacionesValidas :: [(String, String)] -> Bool
@@ -17,7 +18,7 @@ pertenece t (x:xs) = t == x || pertenece t xs
 -- PERSONAS
 personas :: [(String, String)] -> [String]
 personas [] = []
-personas ((usr1,usr2):xs) | usr1 /= usr2 = eliminarRepetidos (usr1: usr2 : personas xs)
+personas ((usr1,usr2):xs) | usr1 /= usr2 = eliminarRepetidos (usr1 : usr2 : personas xs)
                           | otherwise = personas xs
 
 -- Agrego funcion eliminarRepetidos, que toma una lista y quita los elementos que se repiten
@@ -39,25 +40,16 @@ amigosDe usr ((x,y):xs) | usr == x =  y : amigosDe usr xs
 -------------------------------------------------------------------------------------
 
 -- PERSONA CON MAS AMIGOS
-personaConMasAmigos :: [(String, String)] -> String
-personaConMasAmigos ((x,y):xs) = x
+cantidadDeAmigos :: String -> [(String,String)] -> Int
+cantidadDeAmigos usr xs = length (amigosDe usr xs)
+ 
+--- Esto es como persona con mas amigos pero pasandole una lista como parametro, para que de un resultado de esa lista 
+mayorAmigueroAux :: [String]->[(String,String)]->String
+mayorAmigueroAux [x] _ = x
+mayorAmigueroAux (x:y:xs) relaciones
+    | cantidadDeAmigos x relaciones >= cantidadDeAmigos y relaciones = mayorAmigueroAux (x:xs) relaciones
+    | otherwise = mayorAmigueroAux (y:xs) relaciones
 
--- Agrego funciones auxiliares
--- Cuenta CUANTAS veces aparece un determinado string en una lista
-contar :: String -> [(String, String)] -> Integer
-contar _ [] = 0
-contar t ((x,y):xs) | perteneceAUX t [(x,y)] = 1 + contar t xs
-                    | otherwise = contar t xs
-
-maximo :: [Integer] -> Integer
-maximo [n] = n
-maximo (x:xs) | x >= maximo xs = x
-              | otherwise = maximo xs
-
--- Funcion Pertenece pero tweakeada para que acepte string -> tupla de strings
-perteneceAUX :: (Eq t) => t -> [(t,t)] -> Bool
-perteneceAUX _ [] = False
-perteneceAUX t ((x,y):xs) = t == x || t == y || perteneceAUX t xs
-
-
-
+--- Esto es igual que antes, pero como le paso como parametro (personas relaciones) obligo a que la lista sean todos los elementos de relaciones
+personaConMasAmigos :: [(String,String)] -> String
+personaConMasAmigos relaciones = mayorAmigueroAux (personas relaciones) relaciones   
