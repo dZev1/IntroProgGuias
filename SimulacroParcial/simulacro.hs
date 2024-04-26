@@ -43,13 +43,13 @@ amigosDe usr ((x,y):xs) | usr == x =  y : amigosDe usr xs
 cantidadDeAmigos :: String -> [(String,String)] -> Int
 cantidadDeAmigos usr xs = length (amigosDe usr xs)
  
---- Esto es como persona con mas amigos pero pasandole una lista como parametro, para que de un resultado de esa lista 
+
 mayorAmigueroAux :: [String]->[(String,String)]->String
 mayorAmigueroAux [x] _ = x
 mayorAmigueroAux (x:y:xs) relaciones
     | cantidadDeAmigos x relaciones >= cantidadDeAmigos y relaciones = mayorAmigueroAux (x:xs) relaciones
     | otherwise = mayorAmigueroAux (y:xs) relaciones
 
---- Esto es igual que antes, pero como le paso como parametro (personas relaciones) obligo a que la lista sean todos los elementos de relaciones
+
 personaConMasAmigos :: [(String,String)] -> String
 personaConMasAmigos relaciones = mayorAmigueroAux (personas relaciones) relaciones   

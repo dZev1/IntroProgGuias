@@ -51,4 +51,12 @@ sacarPrimeraPalabra (x:xs) | x==' ' = xs
 
 -- d
 palabraMasLarga :: [Char] -> [Char]
-pa
+palabraMasLarga xs = palabraMasLargaSinLimpiar (limpiarCadena xs)
+
+palabraMasLargaSinLimpiar :: [Char] -> [Char]
+palabraMasLargaSinLimpiar xs | sacarPrimeraPalabra xs == [] = primeraPalabra xs
+                             | length (primeraPalabra xs) > length (palabraMasLargaSinLimpiar (sacarPrimeraPalabra xs)) = primeraPalabra xs
+                             | otherwise = palabraMasLargaSinLimpiar (sacarPrimeraPalabra xs)
+
+
+
