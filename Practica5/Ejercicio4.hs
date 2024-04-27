@@ -1,6 +1,4 @@
-module Ejercicio4 where
 
-type Texto = [Char]
 
 -- a
 sacarBlancosRepetidos :: [Char] -> [Char]
@@ -58,5 +56,24 @@ palabraMasLargaSinLimpiar xs | sacarPrimeraPalabra xs == [] = primeraPalabra xs
                              | length (primeraPalabra xs) > length (palabraMasLargaSinLimpiar (sacarPrimeraPalabra xs)) = primeraPalabra xs
                              | otherwise = palabraMasLargaSinLimpiar (sacarPrimeraPalabra xs)
 
+-- e
+aplanar :: [String] -> String
+aplanar [] = []
+aplanar (xs:xss) = xs ++ aplanar xss
 
 
+-- f
+aplanarConBlancos :: [String] -> String
+aplanarConBlancos [] = []
+aplanarConBlancos (xs:xss) | xss == [] = xs 
+                           | otherwise = xs ++ " " ++ aplanarConBlancos xss
+
+-- g
+aplanarConNBlancos :: [String] -> Integer -> String
+aplanarConNBlancos [] n = []
+aplanarConNBlancos (xs:xss) n | xss == [] = xs
+                              | otherwise = xs ++ agregarNBlancos n ++ aplanarConNBlancos xss n
+
+agregarNBlancos :: Integer -> String
+agregarNBlancos 0 = []
+agregarNBlancos n = " " ++ agregarNBlancos (n - 1)
