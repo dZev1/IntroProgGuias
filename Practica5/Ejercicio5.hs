@@ -4,6 +4,7 @@ sumaAcumulada [] = []
 sumaAcumulada [t] = [t]
 sumaacumulada (x:xs) = x : sumaacumulada ((head (xs) + x) : tail xs)
 
+-- 2
 descomponerEnPrimos :: [Integer] -> [[Integer]]
 descomponerEnPrimos [] = []
 descomponerEnPrimos (x:xs) = descomponerEnFactoresPrimosDesde 2 x  : descomponerEnPrimos xs
