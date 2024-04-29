@@ -1,4 +1,3 @@
-import Data.Array (listArray)
 -- Ejercicio 1
 votosEnBlanco :: [(String, String)] -> [Integer] -> Integer -> Integer
 votosEnBlanco _ votosPositivos cantTotalVotos = cantTotalVotos - contarVotosPositivos votosPositivos
