@@ -1,5 +1,4 @@
-module Simulacro where
-import System.Win32 (eNABLE_QUICK_EDIT_MODE)
+module Solucion where
 
 -- RELACIONES VALIDAS
 relacionesValidas :: [(String, String)] -> Bool
