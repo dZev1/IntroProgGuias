@@ -5,8 +5,6 @@ division n m = fromIntegral n / fromIntegral m
 
 -- Ejercicio 1
 porcentajeDeVotosAfirmativos :: [(String, String)] -> [Int] -> Int  -> Float
-porcentajeDeVotosAfirmativos [] _ _ = 0
-porcentajeDeVotosAfirmativos _ [] _ = 0
 porcentajeDeVotosAfirmativos _ votos cantVotos = division ((totalVotosAfirmativos votos) * 100) cantVotos
 
 totalVotosAfirmativos :: [Int] -> Int
