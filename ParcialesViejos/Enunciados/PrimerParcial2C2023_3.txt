@@ -65,6 +65,10 @@ problema porcentajeDeGoles (goleador: String, goleadoresPorEquipo: seq⟨String 
     asegura: {res es el porcentaje de goles que marcó goleador sobre el total de goles convertidos por goleadores}
 }
 
+Se sugiere usar la funcion:
+division :: Int -> Int -> Float
+division n m = fromIntegral n / fromIntegral m
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 4) Botín de Oro [3 puntos]

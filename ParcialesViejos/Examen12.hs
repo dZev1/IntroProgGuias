@@ -1,5 +1,3 @@
-module Examen12 where
-
 division :: Int -> Int -> Float
 division n m = fromIntegral n / fromIntegral m
 
