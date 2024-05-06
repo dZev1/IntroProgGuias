@@ -1,4 +1,3 @@
-module Solucion where
 
 -- RELACIONES VALIDAS
 relacionesValidas :: [(String, String)] -> Bool
@@ -24,7 +23,7 @@ personas ((usr1,usr2):xs) | usr1 /= usr2 = eliminarRepetidos (usr1 : usr2 : pers
 eliminarRepetidos :: (Eq t) => [t] -> [t]
 eliminarRepetidos [] = []
 eliminarRepetidos [t] = [t]
-eliminarRepetidos (x:xs) | pertenece x xs = [] ++ eliminarRepetidos xs
+eliminarRepetidos (x:xs) | pertenece x xs = eliminarRepetidos xs
                          | otherwise = x : eliminarRepetidos xs
 
 -------------------------------------------------------------------------------------
