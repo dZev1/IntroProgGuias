@@ -19,22 +19,25 @@ contarCuantasVecesAparece c (x:xs)
 
 -- Ejercicio 3
 laQueMasHayQueCodificar :: [Char] -> [(Char, Char)] -> Char
-laQueMasHayQueCodificar frase mapeo = laQueMasHayQueCodificarAuxiliar frase frase mapeo
+laQueMasHayQueCodificar [t] _ = t
+laQueMasHayQueCodificar (l1:l2:xs) mapeo
+    | cuantasVecesHayQueCodificar l1 (l1:l2:xs) mapeo >= cuantasVecesHayQueCodificar l2 (l1:l2:xs) mapeo = laQueMasHayQueCodificar (l1: quitar l2 xs) mapeo
+    | otherwise = laQueMasHayQueCodificar (l2: quitar l1 xs) mapeo
 
-laQueMasHayQueCodificarAuxiliar :: [Char] -> [Char] -> [(Char, Char)] -> Char
-laQueMasHayQueCodificarAuxiliar [t] _ _ = t
-laQueMasHayQueCodificarAuxiliar (l1:l2:ls) frase mapeo
-    | cuantasVecesHayQueCodificar l1 frase mapeo >= cuantasVecesHayQueCodificar l2 frase mapeo = laQueMasHayQueCodificarAuxiliar (l1:ls) frase mapeo
-    | otherwise = laQueMasHayQueCodificarAuxiliar (l2:ls) frase mapeo
+quitar :: Char -> [Char] -> [Char]
+quitar _ [] = []
+quitar n (x:xs)
+    | n == x = quitar n xs
+    | otherwise = x : quitar n xs
 
 -- Ejercicio 4
 codificarFrase :: [Char] -> [(Char, Char)] -> [Char]
 codificarFrase [] _ = []
-codificarFrase (l:fs) mapeo
-    | hayQueCodificar l mapeo = obtenerReemplazo l mapeo : codificarFrase fs mapeo
-    | otherwise = l : codificarFrase fs mapeo
+codificarFrase (l:ls) mapeo
+    | hayQueCodificar l mapeo = reemplazar l mapeo : codificarFrase ls mapeo
+    | otherwise = l : codificarFrase ls mapeo
 
-obtenerReemplazo :: Char -> [(Char, Char)] -> Char
-obtenerReemplazo c ((a,r):xs)
-    | c == a = r
-    | otherwise = obtenerReemplazo c xs
+reemplazar :: Char -> [(Char, Char)] -> Char
+reemplazar c ((m,r):ms)
+    | c == m = r
+    | otherwise = reemplazar c ms
