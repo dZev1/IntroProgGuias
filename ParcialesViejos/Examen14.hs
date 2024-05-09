@@ -21,8 +21,8 @@ contarCuantasVecesAparece c (x:xs)
 laQueMasHayQueCodificar :: [Char] -> [(Char, Char)] -> Char
 laQueMasHayQueCodificar [t] _ = t
 laQueMasHayQueCodificar (l1:l2:xs) mapeo
-    | cuantasVecesHayQueCodificar l1 (l1:l2:xs) mapeo >= cuantasVecesHayQueCodificar l2 (l1:l2:xs) mapeo = laQueMasHayQueCodificar (l1: quitar l2 xs) mapeo
-    | otherwise = laQueMasHayQueCodificar (l2: quitar l1 xs) mapeo
+    | cuantasVecesHayQueCodificar l1 (l1:l2:xs) mapeo >= cuantasVecesHayQueCodificar l2 (l1:l2:xs) mapeo = laQueMasHayQueCodificar (l1:xs) mapeo
+    | otherwise = laQueMasHayQueCodificar (l2:xs) mapeo
 
 quitar :: Char -> [Char] -> [Char]
 quitar _ [] = []
