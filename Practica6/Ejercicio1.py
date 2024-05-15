@@ -1,30 +1,25 @@
-from math import sqrt
-from math import pi
+from math import sqrt, pi
 
-def imprimir_hola_mundo() -> str:
-    return "Hello World!"
+def print_hello_world() -> None:
+    print("Hello, World!")
 
-def imprimir_un_verso() -> str:
-    return "And if a double-decker bus,\nCrashes into us.\nTo die by your side,\nIs such a heavenly way to die."
+def imprimir_un_verso() -> None:
+    print("We are the Edema Ruh.\nWe know the songs,\nThat sirens sang")
 
-def raizDe2() -> float:
+def raiz_de_2() -> str:
     return round(sqrt(2),4)
 
-def factorial(n:int) -> int:
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n - 1)
-
-def factorial_de_dos() -> int:
-    return factorial(2)
+def factorial_de_2() -> int:
+    return 2 * 1
 
 def perimetro() -> float:
     return 2 * pi
 
-if __name__ == "__main__":
-    print(imprimir_hola_mundo())
-    print(imprimir_un_verso())
-    print(raizDe2())
-    print(factorial_de_dos())
+
+
+if __name__ == '__main__':
+    print_hello_world()
+    imprimir_un_verso()
+    print(raiz_de_2())
+    print(factorial_de_2())
     print(perimetro())
