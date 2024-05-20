@@ -4,6 +4,15 @@ def pertenece(s: list[int], e: int) -> bool:
             return True
     return False
 
+def perteneceWhile(s: list[int], e:int) -> bool:
+    indiceActual: int = 0
+    longitud = len(s)
+    while(indiceActual < longitud):
+        if e == s[indiceActual]:
+            return True
+        else:
+            indiceActual += 1
+
 def suma_total(s: list[int]) -> int:
     suma: int = 0
     longitud_lista = len(s)
