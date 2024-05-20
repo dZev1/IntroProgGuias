@@ -4,14 +4,16 @@ def pertenece(s: list[int], e: int) -> bool:
             return True
     return False
 
-def perteneceWhile(s: list[int], e:int) -> bool:
-    indiceActual: int = 0
-    longitud = len(s)
-    while(indiceActual < longitud):
-        if e == s[indiceActual]:
-            return True
+def divide_a_todos(s:list[int], e:int) -> bool:
+    indice_actual:int = 0
+    longitud_lista = len(s)
+
+    while (indice_actual < longitud_lista):
+        if s[indice_actual] % e != 0:
+            return False
         else:
-            indiceActual += 1
+            indice_actual += 1
+    return True
 
 def suma_total(s: list[int]) -> int:
     suma: int = 0
@@ -21,7 +23,6 @@ def suma_total(s: list[int]) -> int:
     return suma
     
 if __name__ == '__main__':
-    print(pertenece([3,4,3,3,1,2,3,2,1,2,5,6,68,768,34,24,7], 9))
+    print(pertenece([3,4,3,3,1,2,3,2,1,2,5,6,68,768,34,24,7], 68))
     print(suma_total([1,2,3]))
-
-    input()
+    print(divide_a_todos([2,4,6,8,2], 2))
