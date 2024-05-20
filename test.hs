@@ -1,4 +1,4 @@
-import Distribution.PackageDescription.FieldGrammar (formatExtraSourceFiles)
+import Data.Char
 --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
 
 devolverElementoEnPosicion :: [a] -> Integer -> a
@@ -52,3 +52,40 @@ devolverPosicionesImparesAux _ [] = ""
 devolverPosicionesImparesAux n (x:xs)
     | mod (n - (n - 1)) 2 /= 0 = x ++ devolverPosicionesImparesAux (length xs) xs
     | otherwise = devolverPosicionesImparesAux (n + 1) xs
+
+esMinuscula :: Char -> Bool
+esMinuscula c = ord c >= 97 && ord c <= 122
+
+letraANatural :: Char -> Int
+letraANatural c = ord c - ord 'a'
+
+
+desplazar :: Char -> Int -> Char
+desplazar c n | not (esMinuscula c) = c
+              | otherwise = chr (ord 'a' + mod (letraANatural c + n) 26)
+
+cifrar :: String -> Int -> String
+cifrar [] _ = []
+cifrar (x:xs) n = desplazar x n : cifrar xs n
+
+cifrarLista :: [String] -> [String]
+cifrarLista [] = []
+cifrarLista (x:xs) = cifrarLista (quitarUltimoString (x:xs)) ++ [cifrar (ultimoString (x:xs)) (posicion (ultimoString (x:xs)) (x:xs))]
+
+-- esta función auxiliar me indica el número de la posición del string en la lista, siendo la primer posición correspondiente al número 0
+posicion :: String -> [String] -> Int
+posicion x (y:ys) | length (y:ys) == 1 = 0
+                  | x == y = 0
+                  | otherwise = 1 + posicion x ys
+
+-- esta función auxiliar devuelve el último string de una lista de string
+ultimoString :: [String] -> String
+ultimoString [] = []
+ultimoString (x:xs) | length(x:xs) == 1 = x
+                    | otherwise = ultimoString xs    
+
+-- esta función auxiliar quita el último string de una lista de string
+quitarUltimoString :: [String] -> [String]
+quitarUltimoString [] = []
+quitarUltimoString (x:xs) | length(x:xs) == 1 = []
+                          | otherwise = [x] ++ quitarUltimoString xs     
