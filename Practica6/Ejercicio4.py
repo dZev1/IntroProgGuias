@@ -1,8 +1,12 @@
 def peso_pino(height: int) -> int:
+    altura_centimetros: int = height * 100
+    peso: int
     if height <= 3:
-        return height * 300
+        peso = altura_centimetros * 3
+        return peso
     else:
-        return 2 * 100 * (height - 3) + 900
+        peso = 2 * (altura_centimetros - 300) + 900
+        return peso
 
 def es_peso_util(peso: int) -> bool:
     return peso >= 400 and peso <= 1000

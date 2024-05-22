@@ -1,11 +1,18 @@
 def es_nombre_largo(nombre : str) -> bool:
-    return len(nombre) >= 3 and len(nombre) <= 8
+    resultado: bool = len(nombre) >= 3 and len(nombre) <= 8
+    return resultado
 
 def alguno_es_cero(n1: float,n2: float) -> bool:
-    return n1 == 0 or n2 == 0
+    resultado: bool = n1 == 0 or n2 == 0
+    return resultado
+
+def ambos_son_cero(n1: float,n2: float) -> bool:
+    resultado: bool = n1 == 0 and n2 == 0
+    return resultado
 
 def es_bisiesto(yr: int) -> bool:
-    return yr % 400 == 0 or (yr % 4 == 0 and yr % 100 != 0)
+    resultado: bool = yr % 400 == 0 or (yr % 4 == 0 and yr % 100 != 0)
+    return resultado
 
 if __name__ == '__main__':
 
