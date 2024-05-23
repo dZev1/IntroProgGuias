@@ -88,8 +88,21 @@ def fortaleza_password(s: str) -> str:
         return "ROJO"
     else:
         return "AMARILLO"
+
+def historial_movimientos(t:list[tuple[str,int]]) -> int:
+    saldo: int = 0
+    length: int = len(t)
     
+    for i in range(length):
+        if t[i][0] == "I":
+            saldo += t[i][1]
+        if t[i][0] == "R":
+            saldo -= t[i][1]
+
+    return saldo
+
 
 if __name__ == "__main__":
     print("ANA es palindromo?:", palindromo("ANa"))
-    
+    a = [("I", 30000),("R",4300),("I",200)]
+    print(historial_movimientos(a))
