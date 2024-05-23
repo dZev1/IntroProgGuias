@@ -59,33 +59,24 @@ esMinuscula c = ord c >= 97 && ord c <= 122
 letraANatural :: Char -> Int
 letraANatural c = ord c - ord 'a'
 
+-- Función para contar las ocurrencias de una letra en una cadena
+contarLetra :: Char -> String -> Int
+contarLetra _ [] = 0
+contarLetra c (x:xs)
+    | not (esMinuscula c) = 0
+    | c == x = 1 + contarLetra c xs
+    | otherwise = contarLetra c xs
 
-desplazar :: Char -> Int -> Char
-desplazar c n | not (esMinuscula c) = c
-              | otherwise = chr (ord 'a' + mod (letraANatural c + n) 26)
+-- Función para calcular el porcentaje de una letra en una cadena
+porcentajeLetra :: Char -> String -> Float
+porcentajeLetra letra cadena =
+    fromIntegral (contarLetra letra cadena) / fromIntegral (length cadena) * 100
 
-cifrar :: String -> Int -> String
-cifrar [] _ = []
-cifrar (x:xs) n = desplazar x n : cifrar xs n
+-- Función principal para calcular la frecuencia de cada letra
+frecuencia :: String -> [Float]
+frecuencia cadena = calcularFrecuencias cadena "abcdefghijklmnopqrstuvwxyz"
 
-cifrarLista :: [String] -> [String]
-cifrarLista [] = []
-cifrarLista (x:xs) = cifrarLista (quitarUltimoString (x:xs)) ++ [cifrar (ultimoString (x:xs)) (posicion (ultimoString (x:xs)) (x:xs))]
+calcularFrecuencias :: String -> String -> [Float]
+calcularFrecuencias _ [] = []
+calcularFrecuencias cadena (letra:resto) = porcentajeLetra letra cadena * fromIntegral (contarLetra letra cadena) : calcularFrecuencias cadena resto
 
--- esta función auxiliar me indica el número de la posición del string en la lista, siendo la primer posición correspondiente al número 0
-posicion :: String -> [String] -> Int
-posicion x (y:ys) | length (y:ys) == 1 = 0
-                  | x == y = 0
-                  | otherwise = 1 + posicion x ys
-
--- esta función auxiliar devuelve el último string de una lista de string
-ultimoString :: [String] -> String
-ultimoString [] = []
-ultimoString (x:xs) | length(x:xs) == 1 = x
-                    | otherwise = ultimoString xs    
-
--- esta función auxiliar quita el último string de una lista de string
-quitarUltimoString :: [String] -> [String]
-quitarUltimoString [] = []
-quitarUltimoString (x:xs) | length(x:xs) == 1 = []
-                          | otherwise = [x] ++ quitarUltimoString xs     
