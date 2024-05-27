@@ -1,4 +1,4 @@
-# Practica3
+# GUIAS DE INTRODUCCIÓN A LA PROGRAMACIÓN [1ºCUATRIMESTRE 2024]
 Resolución de los ejercicios de Introducción a la Programación.
 
 Practica 3: Guia Haskell
