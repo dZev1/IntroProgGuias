@@ -84,11 +84,12 @@ def fortaleza_password(s: str) -> str:
     
     if longitud_mayor_a_8 and tiene_numeros and tiene_mayus_minus:
         return "VERDE"
-    if longitud_menor_a_5:
+    elif longitud_menor_a_5:
         return "ROJO"
     else:
         return "AMARILLO"
 
+# EJ 8
 def historial_movimientos(t:list[tuple[str,int]]) -> int:
     saldo: int = 0
     length: int = len(t)
