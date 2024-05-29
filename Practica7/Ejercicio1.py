@@ -49,9 +49,10 @@ def longitud_mayor_a_7(lista: list[str]) -> bool:
 
 # EJ 6
 def palindromo(a: str) -> bool:
-    r: str = a
-    r = r.lower()
-    return r == r[::-1]
+    string_dado_vuelta: str = ""
+    for i in range(1, len(a) + 1):
+        string_dado_vuelta += a[len(a) - i]
+    return a == string_dado_vuelta
 
 # EJ 7
 def tiene_algun_numero(s: str) -> bool:
@@ -104,6 +105,6 @@ def historial_movimientos(t:list[tuple[str,int]]) -> int:
 
 
 if __name__ == "__main__":
-    print("ANA es palindromo?:", palindromo("ANa"))
+    print("ANA es palindromo?:", palindromo("ana"))
     a = [("I", 30000),("R",4300),("I",200)]
     print(historial_movimientos(a))
