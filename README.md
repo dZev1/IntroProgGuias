@@ -10,3 +10,5 @@ Practica 5: Recursión sobre listas
 Practica 6: Programación imperativa
 
 Practica 7: Funciones sobre listas (tipos complejos)
+
+Practica 8: Archivos, Pilas, Colas y Diccionarios
