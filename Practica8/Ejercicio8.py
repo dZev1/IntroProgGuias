@@ -10,3 +10,4 @@ def generar_nros_al_azar(cantidad: int, desde: int, hasta: int) -> Pila[int]:
 
 pila = generar_nros_al_azar(12,3,1230)
 print(pila.queue)
+
