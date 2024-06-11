@@ -1,5 +1,5 @@
 # GUIAS DE INTRODUCCIÓN A LA PROGRAMACIÓN [1ºCUATRIMESTRE 2024]
-Resolución de los ejercicios de Introducción a la Programación.
+Resolución de los ejercicios de Introducción a la Programación. Hay muchos ejercicios sin resolver pero hasta ahi lo dejo.
 
 Practica 3: Guia Haskell
 
