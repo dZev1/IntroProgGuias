@@ -116,14 +116,14 @@ if __name__ == "__main__":
     print(stock_productos(a_stock))
     
     matriz_horaria = [
-                    ["claudia","fernando","winston","lucio","omen","ruckus","viktor"],
-                    ["claudia","roberto","winston","lucio","ruckus","ruckus","viktor"],
-                    ["claudia","fernando","jeronimo","lucio","omen","ruckus","d.va"],
-                    ["claudia","micho","tito","gordo","cabezon","ruckus","viktor"],
-                    ["claudia","fernando","winston","lucio","omen","ruckus","viktor"],
-                    ["flavio","roberto","winston","lucio","ruckus","ruckus","viktor"],
-                    ["carlitox","fernando","winston","lucio","omen","ruckus","d.va"],
-                    ["claudia","alejo","winston","lucio","omen","ruckus","viktor"]
+                    ["c","f","w","l","o","r","v"],
+                    ["c","r","w","l","r","r","v"],
+                    ["c","f","j","l","o","r","d"],
+                    ["c","m","t","g","c","r","v"],
+                    ["c","f","w","l","o","r","v"],
+                    ["f","r","w","l","r","r","v"],
+                    ["c","f","w","l","o","r","d"],
+                    ["c","a","w","l","o","r","v"]
                     ]
     print(un_responsable_por_turno(matriz_horaria))
     
