@@ -8,15 +8,14 @@
 # Por ejemplo, dados
 #   s = [-1,4,0,4,100,0,100,0,-1,-1]
 #   e = 0
-# se debería devolver res=7
+# se debería devolver res = 7
 
 def ultima_aparicion(s: list[int], e: int) -> int:
-    longitud = len(s)
-    
-    for i in range(longitud - 1, -1, -1):
+    ultimo_indice = len(s) - 1
+    for i in range(ultimo_indice, -1, -1):
         if s[i] == e:
             return i
-    
+
 # Ejercicio 2
 #
 #  problema elementos_exclusivos (s: seq⟨Z⟩, t: seq⟨Z⟩) : seq⟨Z⟩ {
@@ -31,23 +30,19 @@ def ultima_aparicion(s: list[int], e: int) -> int:
 # se debería devolver res = [3,4,5] ó res = [3,5,4] ó res = [4,3,5] ó res = [4,5,3] 
 # ó res = [5,3,4] ó res = [5,4,3]
 
-def pertenece(e: int, s: list[int]) -> bool:
-    for elem in s:
-        if e == elem:
-            return True
-    return False
-
-def pertenece_a_ambas(e:int, s: list[int], t: list[int]) -> bool:
-    return pertenece(e, s) and pertenece(e, t)
-
 def elementos_exclusivos(s: list[int], t: list[int]) -> list[int]:
     res: list[int] = []
-    st: list[int] = s + t
     
-    for elem in st:
-        if not(pertenece_a_ambas(elem,s,t)):
-            res.append(elem)
+    for num1 in s:
+        if not(num1 in t) and not(num1 in res):
+            res.append(num1)
+    
+    for num2 in t:
+        if not(num2 in s) and not(num2 in res):
+            res.append(num2)
+    
     return res
+            
 
 # Ejercicio 3
 #
@@ -66,11 +61,11 @@ def elementos_exclusivos(s: list[int], t: list[int]) -> list[int]:
 #    inglés = {"Pie": "Foot", "Dedo": "Finger", "Mano": "Hand"}
 #  se debería devolver res=2
 
-def contar_traducciones_iguales (ing: dict, ale: dict):
+def contar_traducciones_iguales (ing: dict, ale: dict) -> int:
     res: int = 0
-    for palabra in ing.keys():
-        if pertenece(palabra, ale.keys()) and ing[palabra] == ale[palabra]:
-            res +=1
+    for key in ing:
+        if ing[key] == ale[key]:
+            res += 1
     return res
 
 # Ejercicio 4
@@ -89,18 +84,28 @@ def contar_traducciones_iguales (ing: dict, ale: dict):
 #  
 # RECORDAR QUE NO IMPORTA EL ORDEN DE LAS CLAVES EN UN DICCIONARIO
 
-def cantidad_apariciones(n: int, s: list[int]) -> int:
-    res: int = 0
-    for e in s:
-        if e == n:
-           res += 1
+def convertir_a_diccionario(lista: list[int]) -> dict[int, int]:
+    res: dict[int, int] = {}
+    
+    for num in lista:
+        if not(num in res.keys()):
+            res[num] = 1
+        else:
+            res[num] += 1
     return res
 
-def convertir_a_diccionario(lista: list[int]) -> dict:
-    diccionario: dict = {}
-    for elem in lista:
-        diccionario[elem] = cantidad_apariciones(elem, lista)
-    return diccionario
-
-lista = [-1,0,4,100,100,-1,-1]
-print(convertir_a_diccionario(lista))
+if __name__ == "__main__":
+    s = [-1,4,0,4,100,0,100,0,-1,-1]
+    e = 0
+    print(ultima_aparicion(s, e))
+    
+    u = [-1,4,0,4,3,0,100,0,-1,-1]
+    v = [0,100,5,0,100,-1,5]
+    print(elementos_exclusivos(u, v))
+    
+    aleman = {"Mano": "Hand", "Pie": "Fuss", "Dedo": "Finger", "Cara": "Gesicht"}
+    ingles = {"Pie": "Foot", "Dedo": "Finger", "Mano": "Hand"}
+    print(contar_traducciones_iguales(ingles,aleman))
+    
+    lista = [-1,0,4,100,100,-1,-1]
+    print(convertir_a_diccionario(lista))
