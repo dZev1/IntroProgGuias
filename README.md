@@ -10,4 +10,4 @@ Resolución de los ejercicios de Introducción a la Programación. Hay muchos ej
 | [Practica 6](https://github.com/dZev1/IntroProgGuias/tree/14f0320dbd7300760ea5efe5667ba067a4357c6b/Practica6)                   | Introducción a Lenguaje Imperativo         |
 | [Practica 7](https://github.com/dZev1/IntroProgGuias/tree/14f0320dbd7300760ea5efe5667ba067a4357c6b/Practica7)                   | Funciones sobre listas (tipos complejos)   |
 | [Practica 8](https://github.com/dZev1/IntroProgGuias/tree/14f0320dbd7300760ea5efe5667ba067a4357c6b/Practica8)                   | Archivos, Pilas, Colas y Diccionarios      |
-| [Parciales Viejos] (https://github.com/dZev1/IntroProgGuias/tree/c8e1ba9197b99832041d53ee7fbd2e0fc07879b8/ParcialesViejos)      | Algunos parciales del año pasado o de este cuatrimestre |
+| [Parciales Viejos](https://github.com/dZev1/IntroProgGuias/tree/c8e1ba9197b99832041d53ee7fbd2e0fc07879b8/ParcialesViejos)      | Algunos parciales del año pasado o de este cuatrimestre |
