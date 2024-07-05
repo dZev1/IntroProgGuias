@@ -12,13 +12,13 @@ sumaDigitos n = mod n 10 + sumaDigitos (div n 10)
 
 todosDigitosIguales :: Integer -> Bool
 todosDigitosIguales n | n < 10 = True
-                      | otherwise = ultimoDigito n == ultimoDigito (sacaUltimoDigito n) && todosDigitosIguales (sacaUltimoDigito n)
+                      | otherwise = ultimoDigito n == ultimoDigito (sacarUltimoDigito n) && todosDigitosIguales (sacarUltimoDigito n)
 
 ultimoDigito :: Integer -> Integer
 ultimoDigito n = mod n 10
 
-sacaUltimoDigito :: Integer -> Integer
-sacaUltimoDigito n = div n 10
+sacarUltimoDigito :: Integer -> Integer
+sacarUltimoDigito n = div n 10
 
 -- Implementar la funcion iesimoDigito :: Integer -> Integer -> Integer que dado un n ∈ N≥0 y un i ∈ N menor o igual a la cantidad de digitos de n, devuelve el i-esimo digito de n.
 -- problema iesimoDigito (n: Z, i: N) : Z {
@@ -33,13 +33,31 @@ sacaUltimoDigito n = div n 10
 
 cantDigitos :: Integer -> Integer
 cantDigitos n | n < 10 = 1
-              | otherwise = 1 + cantDigitos(sacaUltimoDigito n)
+              | otherwise = 1 + cantDigitos(sacarUltimoDigito n)
 
 iesimoDigito :: Integer -> Integer -> Integer
 iesimoDigito n i | cantDigitos n == i = ultimoDigito n
-                 | otherwise = iesimoDigito (sacaUltimoDigito n) i
+                 | otherwise = iesimoDigito (sacarUltimoDigito n) i
 
 -- Especificar e implementar una funcion esCapicua :: Integer -> Bool que dado n ∈ N≥0 determina si n es un numero capicua.
 esCapicua :: Integer -> Bool
-esCapicua n | n < 10 = True
+esCapicua n | todosDigitosIguales n = True
+            | esCapicuaAux n = True
+            | otherwise = False
+
+esCapicuaAux :: Integer -> Bool
+esCapicuaAux n
+    | n >= 10 && n <= 99 = todosDigitosIguales n
+    | n >= 100 && n < 1000 = ultimoDigito n == primerDigito n
+    | otherwise = esCapicuaAux (sacarPrimerDigito(sacarUltimoDigito n))
+
+primerDigito :: Integer -> Integer
+primerDigito n
+    | n >= 0 && n < 10 = n
+    | otherwise = primerDigito (sacarUltimoDigito n)
+
+sacarPrimerDigito :: Integer -> Integer
+sacarPrimerDigito n
+    | n >= 10 && n < 100 = ultimoDigito n
+    | otherwise = mod n (10^(cantDigitos n - 1))
             
