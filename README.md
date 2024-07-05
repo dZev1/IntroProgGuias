@@ -1,6 +1,9 @@
 # GUIAS DE INTRODUCCIÓN A LA PROGRAMACIÓN [1ºCUATRIMESTRE 2024]
 Resolución de los ejercicios de Introducción a la Programación. Hay muchos ejercicios sin resolver pero hasta ahi lo dejo.
 
+# DISCLAIMER!
+En el segundo cuatrimestre van a cambiar bastante las últimas dos prácticas. Por lo que la gran mayoría de ejercicios de las mismas están desactualizados y/o removidos. Usen con cautela 
+
 # PRÁCTICAS
 |                                                         Práctica                                                                |                   Tema                     |
 |---------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|
