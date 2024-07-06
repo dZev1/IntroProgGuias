@@ -9,9 +9,7 @@ Los ejercicios que no estén resueltos en este repo, puede que estén resueltos 
 # DISCLAIMER!
 En el segundo cuatrimestre van a cambiar bastante las últimas dos prácticas.
 
-De la practica 7 hice la nueva versión, se puede encontrar acá abajo.
-
-La 8 no cambia mucho, entonces pueden guiarse en base a la que se encuentra debajo.
+De ambas prácticas , la **Práctica 7** y la **Práctica 8** hice la nueva versión, se puede encontrar acá abajo.
 
 
 
