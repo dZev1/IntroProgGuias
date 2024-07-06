@@ -4,7 +4,7 @@ Resolución de los ejercicios de Introducción a la Programación. Hay muchos ej
 # DISCLAIMER!
 En el segundo cuatrimestre van a cambiar bastante las últimas dos prácticas.
 De la practica 7 hice la nueva versión, se puede encontrar acá abajo. La 8 no cambia mucho, entonces pueden guiarse en base a la que se encuentra debajo, igualmente está incompleta. Los ejercicios que no estén resueltos en este repo, puede que estén resueltos en
-[Este Repo](https://github.com/agustinacf/IntroduccionALaProgramacion)
+[este Repo](https://github.com/agustinacf/IntroduccionALaProgramacion)
 
 
 # PRÁCTICAS
