@@ -3,7 +3,9 @@ Resolución de los ejercicios de Introducción a la Programación. Hay muchos ej
 
 # DISCLAIMER!
 En el segundo cuatrimestre van a cambiar bastante las últimas dos prácticas.
-De la practica 7 hice la nueva versión, se puede encontrar acá abajo. La 8 no cambia mucho, entonces pueden guiarse en base a la que se encuentra debajo.
+De la practica 7 hice la nueva versión, se puede encontrar acá abajo. La 8 no cambia mucho, entonces pueden guiarse en base a la que se encuentra debajo, igualmente está incompleta. Los ejercicios que no estén resueltos en este repo, puede que estén resueltos en
+[Este Repo](https://github.com/agustinacf/IntroduccionALaProgramacion)
+
 
 # PRÁCTICAS
 |                                                         Práctica                                                                |                   Tema                     |
@@ -15,4 +17,4 @@ De la practica 7 hice la nueva versión, se puede encontrar acá abajo. La 8 no 
 | [Practica 7](https://github.com/dZev1/IntroProgGuias/tree/14f0320dbd7300760ea5efe5667ba067a4357c6b/Practica7)                   | Funciones sobre listas (tipos complejos)   |
 | [Practica 7 (V2)](https://github.com/dZev1/IntroProgGuias/tree/153d07e129359d91a10b75ea4d61fc7c2f18ec4e/Practica7Rev)           | Funciones sobre listas (tipos complejos)   |
 | [Practica 8](https://github.com/dZev1/IntroProgGuias/tree/14f0320dbd7300760ea5efe5667ba067a4357c6b/Practica8)                   | Archivos, Pilas, Colas y Diccionarios      |
-| [Parciales Viejos](https://github.com/dZev1/IntroProgGuias/tree/c8e1ba9197b99832041d53ee7fbd2e0fc07879b8/ParcialesViejos)      | Algunos parciales del año pasado o de este cuatrimestre |
+| [Parciales Viejos](https://github.com/dZev1/IntroProgGuias/tree/c8e1ba9197b99832041d53ee7fbd2e0fc07879b8/ParcialesViejos)       | Algunos parciales del año pasado o de este cuatrimestre |
