@@ -1,4 +1,4 @@
-# GUIAS DE INTRODUCCIÓN A LA PROGRAMACIÓN [1ºCUATRIMESTRE 2024]
+# GUÍAS DE INTRODUCCIÓN A LA PROGRAMACIÓN 2024
 Resolución de los ejercicios de Introducción a la Programación.
 
 Hay ejercicios sin hacer, lastimosamente no llegué a hacer todo.
