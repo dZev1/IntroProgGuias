@@ -2,7 +2,8 @@
 Resolución de los ejercicios de Introducción a la Programación. Hay muchos ejercicios sin resolver pero hasta ahi lo dejo.
 
 # DISCLAIMER!
-En el segundo cuatrimestre van a cambiar bastante las últimas dos prácticas. Por lo que la gran mayoría de ejercicios de las mismas están desactualizados y/o removidos. Usen con cautela 
+En el segundo cuatrimestre van a cambiar bastante las últimas dos prácticas.
+De la practica 7 hice la nueva versión, se puede encontrar acá abajo. La 8 no cambia mucho, entonces pueden guiarse en base a la que se encuentra debajo.
 
 # PRÁCTICAS
 |                                                         Práctica                                                                |                   Tema                     |
