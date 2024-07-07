@@ -4,8 +4,9 @@ Resolución de los ejercicios de Introducción a la Programación.
 Hay ejercicios sin hacer, lastimosamente no llegué a hacer todo.
 
 Los ejercicios que no estén resueltos en este repo, puede que estén resueltos en
-[este repo](https://github.com/agustinacf/IntroduccionALaProgramacion)
+los demás repos, además de que puede que resuelvan algo de formas distintas.
 
+No hay una sola manera de resolver, por lo tanto veanlas
 # DISCLAIMER!
 En el segundo cuatrimestre van a cambiar bastante las últimas dos prácticas.
 
