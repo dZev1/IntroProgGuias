@@ -28,7 +28,7 @@ todasFilasValidas (x:xs) = esFilaValida 9 x && todasFilasValidas xs
 esFilaValida :: Int -> [Int] -> Bool
 esFilaValida _ [] = True
 esFilaValida 0 _ = True
-esFilaValida xs
+esFilaValida n xs
     | cantidadApariciones n xs > 1 = False
     | otherwise = esFilaValida (n - 1) xs
 
