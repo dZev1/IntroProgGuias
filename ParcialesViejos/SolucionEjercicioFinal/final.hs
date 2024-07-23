@@ -23,7 +23,8 @@ primeraColumna ((y:ys):xs) = y : primeraColumna xs
 
 todasFilasValidas :: [[Int]] -> Bool
 todasFilasValidas [] = True
-todasFilasValidas (x:xs) = esFilaValida 9 x && todasFilasValidas xs
+todasFilasValidas (x:xs) | not (esFilaValida 9 x) = False
+                         | otherwise = todasFilasValidas xs
 
 esFilaValida :: Int -> [Int] -> Bool
 esFilaValida _ [] = True
